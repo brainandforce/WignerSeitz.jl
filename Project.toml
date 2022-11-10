@@ -1,7 +1,7 @@
 name = "WignerSeitz"
 uuid = "febcb537-6ed7-48c5-819e-90cfcb7df844"
 authors = ["Brandon Flores <bsflores@wisc.edu>"]
-version = "0.1.0"
+version = "0.0.0"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
