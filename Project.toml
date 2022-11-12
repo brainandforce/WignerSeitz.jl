@@ -8,6 +8,7 @@ LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 NormalForms = "109d20d8-9763-411c-9b60-7eb2a068657f"
 
 [compat]
+NormalForms = "0.1"
 julia = "1.6"
 
 [extras]
