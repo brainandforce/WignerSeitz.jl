@@ -46,10 +46,9 @@ struct HermiteReducedLattice{T,M} <: LatticeReduction{T,M}
     B::M
     U::M
     info::LinearAlgebra.BlasInt
-    function HermiteReducedLattice(B::AbstractMatrix, U::AbstractMatrix, info::Integer = 0)
-        @assert isunimodular(U) "U is not unimodular."
+    function HermiteReducedLattice(B::AbstractMatrix, U::AbstractMatrix)
         M = Base.promote_typeof(B, U)
-        return new{eltype(M),M}(B, U, info)
+        return new{eltype(M),M}(B, U, (isunimodular(U) ? 0 : -1))
     end
 end
 
