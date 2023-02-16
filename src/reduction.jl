@@ -33,6 +33,9 @@ function Base.show(io::IO, mime::MIME"text/plain", L::LatticeReduction)
         Base.show(io, mime, L.U)
     else
         print(io, "Failed factorization of type $(typeof(L))")
+        if L.info == -1
+            print(io, ": unimodularity failure")
+        end
     end
 end
 
