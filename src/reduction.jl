@@ -66,7 +66,6 @@ For a lattice reduction which creates a copy of the original matrix, or lattice 
 `SMatrix`, see `hermite_reduction`.
 """
 function hermite_reduce!(M::AbstractMatrix)
-    X = copy(M)
     # Right unimodular matrix factor
     U = eye(M, 2)
     # Size rank of the vector we're minimizing against
