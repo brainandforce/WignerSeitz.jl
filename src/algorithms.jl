@@ -43,3 +43,19 @@ Returns the Selling matrix of M, which is equal to the negative Gram matrix, but
 column for the superbase vector.
 """
 selling(M::AbstractMatrix) = -superbase(M)' * superbase(M)
+
+"""
+    WignerSeitz.isobtuse(M::AbstractMatrix) -> Bool
+
+Returns `true` if a lattice basis is obtuse, meaning that all of the Selling parameters of the 
+lattice basis are positive.
+"""
+function isobtuse(M::AbstractMatrix)
+    S = superbase(M)
+    for a in axes(S,2)
+        for b in a:size(S,2)
+            dot(S[:,a], S[:,b]) > 0 && return false
+        end
+    end
+    return true
+end
